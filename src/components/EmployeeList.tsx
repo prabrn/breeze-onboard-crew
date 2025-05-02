@@ -1,6 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
-import { supabase, Employee } from '@/lib/supabase';
+import { supabase } from '@/lib/supabase';
+import type { Employee } from '@/lib/supabase';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { toast } from 'sonner';
