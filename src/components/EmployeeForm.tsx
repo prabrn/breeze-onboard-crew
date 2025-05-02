@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { z } from 'zod';
@@ -47,9 +46,17 @@ export default function EmployeeForm() {
     setIsSubmitting(true);
     
     try {
+      // Ensure all required fields are present and not undefined
+      const employeeData = {
+        name: data.name,
+        email: data.email,
+        mobile: data.mobile,
+        experience: data.experience
+      };
+      
       const { error } = await supabase
         .from('employees')
-        .insert(data); // Insert just the data object, not as an array
+        .insert(employeeData);
       
       if (error) throw error;
       
