@@ -24,7 +24,8 @@ export default function EmployeeList() {
 
       if (error) throw error;
       
-      setEmployees(data || []);
+      // Type assertion to ensure data is treated as Employee[]
+      setEmployees(data as Employee[] || []);
     } catch (error) {
       console.error('Error fetching employees:', error);
       toast.error('Failed to load employees. Please refresh the page.');

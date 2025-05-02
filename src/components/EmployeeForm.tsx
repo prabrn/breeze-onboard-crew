@@ -49,7 +49,7 @@ export default function EmployeeForm() {
     try {
       const { error } = await supabase
         .from('employees')
-        .insert([data]);
+        .insert(data); // Insert just the data object, not as an array
       
       if (error) throw error;
       
